@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.javafxapplication1.DashboardController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+
+        <!-- Top bar: welcome + logout -->
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <children>
+                <Label fx:id="welcomeLabel" text="Welcome" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                <Label fx:id="roleLabel" text="Role: " />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout" />
+            </children>
+        </HBox>
+
+        <!-- Action buttons -->
+        <HBox spacing="10.0">
+            <children>
+                <Button fx:id="uploadBtn" text="Upload" onAction="#handleUpload" />
+                <Button fx:id="downloadBtn" text="Download" onAction="#handleDownload" />
+                <Button fx:id="deleteBtn" text="Delete" onAction="#handleDelete" />
+                <Button fx:id="shareBtn" text="Share" onAction="#handleShare" />
+                <Region HBox.hgrow="ALWAYS" />
+                <ComboBox fx:id="algorithmCombo" />
+                <Button text="Apply Algorithm" onAction="#handleAlgorithm" />
+                <Button fx:id="terminalBtn" text="Terminal" onAction="#handleTerminal" />
+                <Button fx:id="adminBtn" text="Admin" onAction="#handleAdmin" visible="false" />
+            </children>
+        </HBox>
+
+        <!-- File table -->
+        <TableView fx:id="fileTable" prefHeight="250.0" VBox.vgrow="ALWAYS" />
+
+        <!-- Log area -->
+        <Label text="Activity Log:" />
+        <TextArea fx:id="logArea" prefHeight="120.0" editable="false" wrapText="true" />
+
+    </children>
+</VBox>
