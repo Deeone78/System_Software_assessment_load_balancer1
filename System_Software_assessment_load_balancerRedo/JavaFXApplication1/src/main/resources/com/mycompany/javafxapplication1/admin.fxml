@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.javafxapplication1.AdminController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+
+        <Label text="Admin Panel" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+
+        <!-- User table -->
+        <TableView fx:id="userTable" prefHeight="200.0" VBox.vgrow="ALWAYS" />
+
+        <!-- Action buttons -->
+        <HBox spacing="10.0">
+            <children>
+                <Button text="Delete User" onAction="#handleDeleteUser" />
+                <Button text="Promote to Admin" onAction="#handlePromote" />
+            </children>
+        </HBox>
+
+        <!-- Add user form -->
+        <Label text="Add New User:" />
+        <GridPane hgap="10.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="100.0" />
+                <ColumnConstraints prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="30.0" />
+                <RowConstraints prefHeight="30.0" />
+                <RowConstraints prefHeight="30.0" />
+            </rowConstraints>
+            <children>
+                <Label text="Username:" GridPane.rowIndex="0" />
+                <TextField fx:id="newUserField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Password:" GridPane.rowIndex="1" />
+                <PasswordField fx:id="newPassField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button text="Add User" onAction="#handleAddUser" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+
+        <!-- Status area -->
+        <Label text="Status:" />
+        <TextArea fx:id="statusArea" prefHeight="80.0" editable="false" wrapText="true" />
+
+    </children>
+</VBox>

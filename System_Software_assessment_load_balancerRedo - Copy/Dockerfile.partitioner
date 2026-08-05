@@ -1,6 +1,0 @@
-FROM pedrombmachado/ntu_lubuntu:comp20081
-RUN apt-get update && apt-get install -y openjdk-11-jdk maven && rm -rf /var/lib/apt/lists/*
-WORKDIR /home/ntu-user/NetBeansProjects/JavaFXApplication1
-COPY JavaFXApplication1/ .
-RUN mvn package -DskipTests
-CMD ["java", "-cp", "target/JavaFXApplication1-1.0-SNAPSHOT.jar", "com.mycompany.javafxapplication1.Partitioner"]
